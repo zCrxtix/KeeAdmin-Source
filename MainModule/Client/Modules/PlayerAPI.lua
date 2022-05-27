@@ -1,6 +1,6 @@
-local playerApi = {}
+local playerAPI = {}
 
-function playerApi.getPlayer(plr : Player, args)
+function playerAPI.getPlayer(plr : Player, args)
 	if string.lower(args[2]) == "me" then
 		return {plr}
 	elseif string.lower(args[2]) == "others" then
@@ -27,4 +27,4 @@ function playerApi.getPlayer(plr : Player, args)
 	return {}
 end
 
-return playerApi
+return playerAPI
