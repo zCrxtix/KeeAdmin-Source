@@ -1,12 +1,12 @@
-local playerApi = {}
+local playerAPI = {}
 
 local players = game:GetService("Players")
 
-function playerApi.onJoin(cb)
+function playerAPI.onJoin(cb)
 	return players.PlayerAdded:Connect(cb)
 end
 
-function playerApi.onChatted(cb)
+function playerAPI.onChatted(cb)
 	return players.PlayerAdded:Connect(function(player)
 		player.Chatted:Connect(function(msg, r)
 			cb(player, msg, false)
@@ -14,7 +14,7 @@ function playerApi.onChatted(cb)
 	end)
 end
 
-function playerApi.checkPlayerRank(player, config) --// Not sure how efficient this is. Can be changed if needed.
+function playerAPI.checkPlayerRank(player, config) --// Not sure how efficient this is. Can be changed if needed.
 	for i,v in pairs(config["Players"]) do
 		if type(v) == "number" then
 			if player.UserId == v then
@@ -69,7 +69,7 @@ function playerApi.checkPlayerRank(player, config) --// Not sure how efficient t
 	end
 end
 
-function playerApi.getPlayer(player : Player, args)
+function playerAPI.getPlayer(player : Player, args)
 	if args[2] == nil then return {player} end
 	if string.lower(args[2]) == "me" then
 		return {player}
@@ -99,4 +99,4 @@ function playerApi.getPlayer(player : Player, args)
 	return {}
 end
 
-return playerApi
+return playerAPI
