@@ -192,7 +192,7 @@ local commands = {
 		description = "Gives the player a sword",
 		category = "fun",
 		level = 1,
-		
+
 		execute = function(player, args)
 			for _,v in pairs(GetPlayer(player, args)) do
 				game.ServerStorage.Tools.Sword:Clone().Parent = player.Backpack
@@ -372,7 +372,7 @@ local commands = {
 		description = "Makes the specified users invincible",
 		category = "fun",
 		level = 1,
-		
+
 		execute = function(player, args)
 			for _,v in pairs(GetPlayer(player, args)) do
 				v.Character.Humanoid.MaxHealth = math.huge
@@ -515,7 +515,7 @@ local commands = {
 			for _,v in pairs(GetPlayer(player, args)) do
 				if v:FindFirstChild("leaderstats") then
 					if v.leaderstats:FindFirstChild(args[3]) then
-						v[args[3]].Value += args[4
+						v[args[3]].Value += args[4]
 					end
 				end
 			end
