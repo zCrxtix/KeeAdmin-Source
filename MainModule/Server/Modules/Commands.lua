@@ -507,7 +507,7 @@ local commands = {
 	{
 		name = "changestat",
 		aliases = {"change"},
-		description = "Changes the specified player's currency",
+		description = "Changes the specified player's stat",
 		category = "fun",
 		level = 1,
 
@@ -515,7 +515,7 @@ local commands = {
 			for _,v in pairs(GetPlayer(player, args)) do
 				if v:FindFirstChild("leaderstats") then
 					if v.leaderstats:FindFirstChild(args[3]) then
-						v[args[3]].Value += tonumber(args[4])
+						v[args[3]].Value += args[4
 					end
 				end
 			end
